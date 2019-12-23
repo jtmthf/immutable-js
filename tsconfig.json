@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["es2015"],
+    "allowJs": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*"]
+}

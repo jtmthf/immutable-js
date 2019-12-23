@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+require('source-map-support/register');
 var { Seq } = require('../../');
 var marked = require('marked');
 var prism = require('./prism');
@@ -17,7 +18,7 @@ function collectAllMembersForAllTypes(defs) {
   _collectAllMembersForAllTypes(defs);
   return allMembers;
   function _collectAllMembersForAllTypes(defs) {
-    Seq(defs).forEach(def => {
+    new Seq(defs).forEach(def => {
       if (def.interface) {
         var groups = collectMemberGroups(def.interface, {
           showInherited: true,

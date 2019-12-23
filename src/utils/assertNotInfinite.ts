@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import invariant from './invariant';
+import invariant from "./invariant";
 
-export default function assertNotInfinite(size) {
+export default function assertNotInfinite(size: number): void {
   invariant(
     size !== Infinity,
-    'Cannot perform this action with an infinite size.'
+    "Cannot perform this action with an infinite size."
   );
 }

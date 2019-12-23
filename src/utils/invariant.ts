@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export default function invariant(condition, error) {
-  if (!condition) throw new Error(error);
+export default function invariant(condition: boolean, error: string) {
+  if (!condition) {
+    throw new Error(error);
+  }
 }

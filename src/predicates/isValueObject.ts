@@ -5,10 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export function isValueObject(maybeValue) {
+import { ValueObject } from "../ValueObject";
+
+export function isValueObject(maybeValue: any): maybeValue is ValueObject {
   return Boolean(
     maybeValue &&
-      typeof maybeValue.equals === 'function' &&
-      typeof maybeValue.hashCode === 'function'
+      typeof maybeValue.equals === "function" &&
+      typeof maybeValue.hashCode === "function"
   );
 }

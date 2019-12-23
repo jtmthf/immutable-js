@@ -5,14 +5,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export default function isArrayLike(value) {
-  if (Array.isArray(value) || typeof value === 'string') {
+export default function isArrayLike<T = any>(
+  value: any
+): value is ArrayLike<T> {
+  if (Array.isArray(value) || typeof value === "string") {
     return true;
   }
 
   return (
     value &&
-    typeof value === 'object' &&
+    typeof value === "object" &&
     Number.isInteger(value.length) &&
     value.length >= 0 &&
     (value.length === 0
